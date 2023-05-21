@@ -1,4 +1,5 @@
 :: Coded by @DARKNOSY (https://github.com/DARKNOSY/Info-Logger)
+:: I recommend using Bat2ExeXobfuscator for obfuscating and making this modified file a .exe (https://github.com/DARKNOSY/Bat2ExeXobfuscator)
 @echo off & cls
 color 5
 
