@@ -2,6 +2,8 @@
 @echo off & cls
 color 5
 
+set message-after=Don't forget to check out the code, it contains all the information you need to modify it to your needs
+::message after post request to webhook is successful
 set question-asked=Your Webhook
 :: put question instead of "Your Webhook"
 set /p webhook="%question-asked%:  "
@@ -13,8 +15,7 @@ set avatar_url=https://avatars.githubusercontent.com/u/109553205?v=4
 set name=Info Logger / @DARKNOSY
 :: webhook name
 
-curl -H "Content-Type: application/json" -d "{\"username\": \"%name%\", \"content\":\"%question-asked%:  %message%\", \"avatar_url\":\"%avatar_url%\"}" %webhook% >nul & echo Successfuly sent!
+curl -H "Content-Type: application/json" -d "{\"username\": \"%name%\", \"content\":\"%question-asked%:  %message%\", \"avatar_url\":\"%avatar_url%\"}" %webhook% >nul & echo %message-after%
 :: send post request to the set webhook
-echo Don't forget to check out the code, it contains all the information you need
 pause
 exit
