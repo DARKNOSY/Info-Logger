@@ -17,7 +17,7 @@ message_after_error = "Error."
 # message after post request to webhook is unsuccessful
 question_asked = "INSERT-QUESTION-HERE"
 # put question instead of "INSERT-QUESTION-HERE" (don't use ' or any related symbols in the question)
-webhook_url = "https://discord.com/api/webhooks/1108438357958213694/gq_3SA2Vrsz0o0s4o9TTQbGENEvOEpw-OsHSuPXxuB5U34VQ0ETkmbiC0U2U_9ATJixE"
+webhook_url = "INSERT-YOUR-WEBHOOK-LINK-HERE"
 # insert your webhook link instead of INSERT-WEBHOOK-HERE
 username = "Python Info Logger / @DARKNOSY"
 avatar_url = "https://avatars.githubusercontent.com/u/109553205?v=4"
